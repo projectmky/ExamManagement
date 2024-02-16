@@ -1,4 +1,4 @@
-package com.example.ExamManagement;
+package com.example.ExamManagement.Exception;
 
 
 public class ApplicantNotFoundException extends RuntimeException {

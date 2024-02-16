@@ -1,22 +1,27 @@
 package com.example.ExamManagement.user;
 
+import com.example.ExamManagement.token.Token;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class User implements UserDetails {
 
     @Id
+    @GeneratedValue
+    private int id;
+
     @Column(name = "username", unique = true)
     private String username;
 
@@ -24,6 +29,9 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Token> allTokens;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

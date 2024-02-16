@@ -1,6 +1,6 @@
-package com.example.ExamManagement.security;
+package com.example.ExamManagement.config;
 
-import com.example.ExamManagement.repository.UserRepository;
+import com.example.ExamManagement.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

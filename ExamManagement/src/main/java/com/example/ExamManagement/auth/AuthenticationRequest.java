@@ -1,18 +1,20 @@
-package com.example.ExamManagement.security;
+package com.example.ExamManagement.auth;
 
-
+import com.example.ExamManagement.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
-    private String token;
+public class AuthenticationRequest {
+
     private String username;
-    String password;
+    private String password;
+    private Role role;
 
 }

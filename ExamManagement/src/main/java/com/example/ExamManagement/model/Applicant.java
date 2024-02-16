@@ -76,7 +76,6 @@ public class Applicant {
     private Level level;
 
 
-
 }
 
 

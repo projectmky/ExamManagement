@@ -1,6 +1,6 @@
-package com.example.ExamManagement.security;
+package com.example.ExamManagement.auth;
 
-import com.example.ExamManagement.user.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-
+public class AuthenticationResponse {
+    private String accessToken;
+    private String refreshToken;
     private String username;
-    private Role role;
-    private String password;
-
+    String password;
 
 }

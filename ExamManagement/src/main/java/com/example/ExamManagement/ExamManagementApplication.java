@@ -1,7 +1,7 @@
 package com.example.ExamManagement;
 
-import com.example.ExamManagement.security.AuthService;
-import com.example.ExamManagement.security.RegisterRequest;
+import com.example.ExamManagement.auth.AuthService;
+import com.example.ExamManagement.auth.RegisterRequest;
 import com.example.ExamManagement.user.Role;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,8 +22,10 @@ public class ExamManagementApplication {
     public CommandLineRunner commandLineRunner(AuthService authService) {
 
         return args -> {
-            var admin = RegisterRequest.builder().username("God").password("god123").role(Role.ADMIN).build();
+            var admin = RegisterRequest.builder().username("admin").password("admin123").role(Role.ADMIN).build();
+            var applicant = RegisterRequest.builder().username("applicant").password("applicant123").role(Role.APPLICANT).build();
             authService.register(admin);
+            authService.register(applicant);
         };
     }
 }

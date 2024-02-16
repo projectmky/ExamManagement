@@ -1,6 +1,6 @@
 package com.example.ExamManagement.controller;
 
-import com.example.ExamManagement.ApplicantNotFoundException;
+import com.example.ExamManagement.Exception.ApplicantNotFoundException;
 import com.example.ExamManagement.model.Applicant;
 import com.example.ExamManagement.model.Level;
 import com.example.ExamManagement.repository.ApplicantRepository;
